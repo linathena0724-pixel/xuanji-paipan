@@ -79,3 +79,21 @@ test('大运：每步 years 正好是 startYear～endYear 十年，前后两步�
     });
   }
 });
+
+test('稀有前三：按出现比例从小到大，最多三颗，只取吉神（外加华盖），星级跟比例一致', async () => {
+  const { SHENSHA_RARITY } = await import('../src/rarity.js');
+  const { starsOf } = await import('../src/components/shensha.js');
+  const { getShenShaType } = await import('mingyu-core/bazi');
+  assert.equal(starsOf(1.9), 5); assert.equal(starsOf(16.4), 4); assert.equal(starsOf(38.1), 3); assert.equal(starsOf(47.3), 2); assert.equal(starsOf(70.4), 1);
+  for (const date of ['1988-05-20', '1975-11-03', '2001-02-14']) {
+    const r = await paipan({ date, time: '10:30', city: '北京市', gender: 'female' });
+    const f = r.components.shenshaPanel.featured;
+    assert.ok(f.length <= 3);
+    for (let i = 0; i < f.length; i++) {
+      assert.ok(getShenShaType(f[i].name) === '吉' || f[i].name === '华盖', f[i].name);
+      assert.equal(f[i].rarity, SHENSHA_RARITY[f[i].name]);
+      assert.equal(f[i].stars, starsOf(f[i].rarity));
+      if (i) assert.ok(f[i - 1].rarity <= f[i].rarity);
+    }
+  }
+});
