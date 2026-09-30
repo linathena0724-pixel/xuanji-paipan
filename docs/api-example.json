@@ -1,0 +1,562 @@
+{
+  "version": {
+    "api": "v1",
+    "engine": "mingyu-core@0.3.0",
+    "config": "2026-09-30.v1.4"
+  },
+  "input": {
+    "date": "2000-01-01",
+    "time": "12:00",
+    "city": "北京市",
+    "longitude": 116.405285,
+    "gender": "female",
+    "timeKnown": true,
+    "timeMode": "true_solar",
+    "trueSolarTime": "2000-01-01 11:42"
+  },
+  "warnings": [],
+  "timeCheck": {
+    "mode": "true_solar",
+    "pillars": "戊午日 戊午时",
+    "other": {
+      "mode": "clock",
+      "pillars": "戊午日 戊午时"
+    },
+    "differs": false
+  },
+  "bazi": {
+    "pillars": {
+      "year": {
+        "gan": "己",
+        "zhi": "卯",
+        "ganZhi": "己卯",
+        "tenGod": "劫财",
+        "hidden": [
+          {
+            "stem": "乙",
+            "element": "木",
+            "tenGod": "正官"
+          }
+        ],
+        "nayin": "城头土",
+        "kongWang": [
+          "申",
+          "酉"
+        ],
+        "lifeStage": "病",
+        "ziZuo": "病",
+        "shensha": [
+          "德秀贵人",
+          "桃花"
+        ]
+      },
+      "month": {
+        "gan": "丙",
+        "zhi": "子",
+        "ganZhi": "丙子",
+        "tenGod": "偏印",
+        "hidden": [
+          {
+            "stem": "癸",
+            "element": "水",
+            "tenGod": "正财"
+          }
+        ],
+        "nayin": "涧下水",
+        "kongWang": [
+          "申",
+          "酉"
+        ],
+        "lifeStage": "胎",
+        "ziZuo": "胎",
+        "shensha": [
+          "天乙贵人",
+          "德秀贵人",
+          "飞刃",
+          "桃花",
+          "红鸾",
+          "勾绞煞",
+          "空亡",
+          "披麻"
+        ]
+      },
+      "day": {
+        "gan": "戊",
+        "zhi": "午",
+        "ganZhi": "戊午",
+        "tenGod": "日主",
+        "hidden": [
+          {
+            "stem": "丁",
+            "element": "火",
+            "tenGod": "正印"
+          },
+          {
+            "stem": "己",
+            "element": "土",
+            "tenGod": "劫财"
+          }
+        ],
+        "nayin": "天上火",
+        "kongWang": [
+          "子",
+          "丑"
+        ],
+        "lifeStage": "帝旺",
+        "ziZuo": "帝旺",
+        "shensha": [
+          "德秀贵人",
+          "羊刃",
+          "孤鸾煞",
+          "十灵日",
+          "六秀日",
+          "九丑",
+          "天喜",
+          "勾绞煞",
+          "血刃"
+        ]
+      },
+      "hour": {
+        "gan": "戊",
+        "zhi": "午",
+        "ganZhi": "戊午",
+        "tenGod": "比肩",
+        "hidden": [
+          {
+            "stem": "丁",
+            "element": "火",
+            "tenGod": "正印"
+          },
+          {
+            "stem": "己",
+            "element": "土",
+            "tenGod": "劫财"
+          }
+        ],
+        "nayin": "天上火",
+        "kongWang": [
+          "子",
+          "丑"
+        ],
+        "lifeStage": "帝旺",
+        "ziZuo": "帝旺",
+        "shensha": [
+          "德秀贵人",
+          "羊刃",
+          "将星",
+          "天喜",
+          "勾绞煞",
+          "血刃"
+        ]
+      }
+    },
+    "dayMaster": {
+      "gan": "戊",
+      "element": "土",
+      "yinYang": "阳"
+    },
+    "strength": "中和",
+    "pattern": {
+      "name": "正财格",
+      "isSpecial": false,
+      "status": "破格"
+    },
+    "usefulGods": {
+      "favorableWuxing": [
+        "火",
+        "水",
+        "木",
+        "金"
+      ],
+      "unfavorableWuxing": [
+        "土"
+      ],
+      "primaryFavorableWuxing": "火",
+      "primaryUnfavorableWuxing": "土",
+      "useful": "印星",
+      "avoid": "比劫"
+    },
+    "luck": {
+      "startInfo": "出生后 1 年 7 月 16 天 13 小时 24 分 起运（按实际节气时刻计算，三日折一年）",
+      "cycles": [
+        {
+          "seq": 1,
+          "ganZhi": "丁丑",
+          "startAge": 2,
+          "endAge": 11,
+          "startYear": 2001,
+          "endYear": 2010,
+          "score": 70,
+          "tier": 2,
+          "years": [
+            {
+              "year": 2001,
+              "age": 2,
+              "ganZhi": "辛巳",
+              "score": 94,
+              "tier": 0
+            },
+            {
+              "year": 2002,
+              "age": 3,
+              "ganZhi": "壬午",
+              "score": 94,
+              "tier": 0
+            }
+          ]
+        },
+        {
+          "seq": 2,
+          "ganZhi": "戊寅",
+          "startAge": 12,
+          "endAge": 21,
+          "startYear": 2011,
+          "endYear": 2020,
+          "score": 62,
+          "tier": 2,
+          "years": [
+            {
+              "year": 2011,
+              "age": 12,
+              "ganZhi": "辛卯",
+              "score": 86,
+              "tier": 1
+            },
+            {
+              "year": 2012,
+              "age": 13,
+              "ganZhi": "壬辰",
+              "score": 62,
+              "tier": 2
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "components": {
+    "dayMasterCard": {
+      "dayGanZhi": "戊午",
+      "gan": "戊",
+      "element": "土",
+      "yinYang": "阳"
+    },
+    "wuxingRing": {
+      "type": "偏弱型",
+      "strengthScore": 40,
+      "strength": "中和",
+      "rangeType": "极强型",
+      "range": 44,
+      "dominant": "土",
+      "dayMasterElement": "土",
+      "rows": [
+        {
+          "element": "木",
+          "percent": 13,
+          "exact": 12.5,
+          "tenGods": [
+            "正官"
+          ]
+        },
+        {
+          "element": "火",
+          "percent": 30,
+          "exact": 30,
+          "tenGods": [
+            "偏印",
+            "正印"
+          ]
+        },
+        {
+          "element": "土",
+          "percent": 44,
+          "exact": 45,
+          "tenGods": [
+            "劫财",
+            "比肩",
+            "日主"
+          ]
+        },
+        {
+          "element": "金",
+          "percent": 0,
+          "exact": 0,
+          "tenGods": []
+        },
+        {
+          "element": "水",
+          "percent": 13,
+          "exact": 12.5,
+          "tenGods": [
+            "正财"
+          ]
+        }
+      ]
+    },
+    "tenGodBar": {
+      "total": 9,
+      "sum": 99,
+      "rows": [
+        {
+          "tenGod": "比肩",
+          "count": 1,
+          "percent": 11
+        },
+        {
+          "tenGod": "劫财",
+          "count": 3,
+          "percent": 33
+        },
+        {
+          "tenGod": "食神",
+          "count": 0,
+          "percent": 0
+        },
+        {
+          "tenGod": "伤官",
+          "count": 0,
+          "percent": 0
+        },
+        {
+          "tenGod": "正财",
+          "count": 1,
+          "percent": 11
+        },
+        {
+          "tenGod": "偏财",
+          "count": 0,
+          "percent": 0
+        },
+        {
+          "tenGod": "正官",
+          "count": 1,
+          "percent": 11
+        },
+        {
+          "tenGod": "七杀",
+          "count": 0,
+          "percent": 0
+        },
+        {
+          "tenGod": "正印",
+          "count": 2,
+          "percent": 22
+        },
+        {
+          "tenGod": "偏印",
+          "count": 1,
+          "percent": 11
+        }
+      ]
+    },
+    "shenshaPanel": {
+      "featured": [
+        {
+          "name": "红鸾",
+          "pillars": [
+            "month"
+          ],
+          "pillarCount": 1
+        },
+        {
+          "name": "十灵日",
+          "pillars": [
+            "day"
+          ],
+          "pillarCount": 1
+        },
+        {
+          "name": "天喜",
+          "pillars": [
+            "day",
+            "hour"
+          ],
+          "pillarCount": 2
+        }
+      ],
+      "dimensions": [
+        {
+          "key": "guiren",
+          "name": "贵人",
+          "score": 41,
+          "tier": 3,
+          "shensha": [
+            "天乙贵人",
+            "德秀贵人"
+          ]
+        },
+        {
+          "key": "qinggan",
+          "name": "情感",
+          "score": 99,
+          "tier": 0,
+          "shensha": [
+            "桃花",
+            "天喜",
+            "红鸾"
+          ]
+        },
+        {
+          "key": "poli",
+          "name": "魄力",
+          "score": 90,
+          "tier": 0,
+          "shensha": [
+            "将星",
+            "羊刃"
+          ]
+        },
+        {
+          "key": "huigen",
+          "name": "慧根",
+          "score": 35,
+          "tier": 3,
+          "shensha": [
+            "十灵日"
+          ]
+        },
+        {
+          "key": "kaoyan",
+          "name": "考验",
+          "score": 22,
+          "tier": 3,
+          "shensha": [
+            "勾绞煞",
+            "六厄"
+          ]
+        }
+      ],
+      "all": [
+        {
+          "name": "德秀贵人",
+          "type": "吉",
+          "pillars": [
+            "year",
+            "month",
+            "day",
+            "hour"
+          ]
+        },
+        {
+          "name": "桃花",
+          "type": "中性",
+          "pillars": [
+            "year",
+            "month"
+          ]
+        },
+        {
+          "name": "天乙贵人",
+          "type": "吉",
+          "pillars": [
+            "month"
+          ]
+        },
+        {
+          "name": "飞刃",
+          "type": "中性",
+          "pillars": [
+            "month"
+          ]
+        },
+        {
+          "name": "红鸾",
+          "type": "吉",
+          "pillars": [
+            "month"
+          ]
+        },
+        {
+          "name": "勾绞煞",
+          "type": "凶",
+          "pillars": [
+            "month",
+            "day",
+            "hour"
+          ]
+        },
+        {
+          "name": "空亡",
+          "type": "中性",
+          "pillars": [
+            "month"
+          ]
+        },
+        {
+          "name": "披麻",
+          "type": "凶",
+          "pillars": [
+            "month"
+          ]
+        },
+        {
+          "name": "羊刃",
+          "type": "中性",
+          "pillars": [
+            "day",
+            "hour"
+          ]
+        },
+        {
+          "name": "孤鸾煞",
+          "type": "凶",
+          "pillars": [
+            "day"
+          ]
+        },
+        {
+          "name": "十灵日",
+          "type": "吉",
+          "pillars": [
+            "day"
+          ]
+        },
+        {
+          "name": "六秀日",
+          "type": "吉",
+          "pillars": [
+            "day"
+          ]
+        },
+        {
+          "name": "九丑",
+          "type": "中性",
+          "pillars": [
+            "day"
+          ]
+        },
+        {
+          "name": "天喜",
+          "type": "吉",
+          "pillars": [
+            "day",
+            "hour"
+          ]
+        },
+        {
+          "name": "血刃",
+          "type": "凶",
+          "pillars": [
+            "day",
+            "hour"
+          ]
+        },
+        {
+          "name": "六厄",
+          "type": "凶",
+          "pillars": [
+            "day",
+            "hour"
+          ]
+        },
+        {
+          "name": "将星",
+          "type": "吉",
+          "pillars": [
+            "hour"
+          ]
+        }
+      ]
+    }
+  }
+}
