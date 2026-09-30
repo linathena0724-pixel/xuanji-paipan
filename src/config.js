@@ -2,7 +2,7 @@
 // 玄玑 xuanji-paipan · 算法配置表
 // 口径只改这里，计算函数只读不写死数字。改了任何一项都要升 CONFIG_VERSION。
 
-export const CONFIG_VERSION = '2026-09-30.v1.4';
+export const CONFIG_VERSION = '2026-09-30.v1.5';
 
 export const ELEMENTS = ['木', '火', '土', '金', '水'];
 
@@ -56,8 +56,11 @@ export const SHENSHA_DIMENSIONS = [
 // 档位下限，从高到低；判词按「维度 × 档位」在主站配
 export const SHENSHA_TIERS = [90, 70, 50];
 
-// 稀有前三：命中的神煞按下表从前往后取前三（越靠前越稀有）；不在表里的不进稀有前三。
-export const SHENSHA_RARITY_ORDER = ['词馆', '天医', '红鸾', '十灵日', '天喜', '华盖', '天德贵人', '金舆'];
+// 稀有前三：从命中的吉神（外加华盖）里，按出现比例（有这颗星的盘占多少）从小到大取前三。
+// 比例表在 src/rarity.js，是用本服务按出生时间抽样排盘统计出来的（不是任何用户库的数据），见 scripts/rarity.mjs。
+export const SHENSHA_FEATURED_EXTRA = ['华盖'];
+// 星级分界（%）：出现比例 <15 五星／15–30 四星／30–45 三星／45–60 二星／≥60 一星；只由出现比例决定，越少见星越多
+export const SHENSHA_STAR_BANDS = [15, 30, 45, 60];
 
 // ── 大运 / 流年分数（方案 A）──
 // score = base + xiJiWeight×(干喜忌 + 支喜忌) + tenGodWeight×(干十神 + 支十神)，再夹到 clip 区间；地支取本气。

@@ -2,7 +2,7 @@
   "version": {
     "api": "v1",
     "engine": "mingyu-core@0.3.0",
-    "config": "2026-09-30.v1.4"
+    "config": "2026-09-30.v1.5"
   },
   "input": {
     "date": "2000-01-01",
@@ -352,26 +352,31 @@
     "shenshaPanel": {
       "featured": [
         {
-          "name": "红鸾",
-          "pillars": [
-            "month"
-          ],
-          "pillarCount": 1
-        },
-        {
-          "name": "十灵日",
+          "name": "六秀日",
+          "rarity": 10,
+          "stars": 5,
           "pillars": [
             "day"
           ],
           "pillarCount": 1
         },
         {
-          "name": "天喜",
+          "name": "十灵日",
+          "rarity": 16.64,
+          "stars": 4,
           "pillars": [
-            "day",
-            "hour"
+            "day"
           ],
-          "pillarCount": 2
+          "pillarCount": 1
+        },
+        {
+          "name": "红鸾",
+          "rarity": 23.01,
+          "stars": 4,
+          "pillars": [
+            "month"
+          ],
+          "pillarCount": 1
         }
       ],
       "dimensions": [
@@ -383,6 +388,10 @@
           "shensha": [
             "天乙贵人",
             "德秀贵人"
+          ],
+          "weights": [
+            35,
+            6
           ]
         },
         {
@@ -394,6 +403,11 @@
             "桃花",
             "天喜",
             "红鸾"
+          ],
+          "weights": [
+            48,
+            47,
+            4
           ]
         },
         {
@@ -404,6 +418,10 @@
           "shensha": [
             "将星",
             "羊刃"
+          ],
+          "weights": [
+            45,
+            45
           ]
         },
         {
@@ -413,6 +431,9 @@
           "tier": 3,
           "shensha": [
             "十灵日"
+          ],
+          "weights": [
+            35
           ]
         },
         {
@@ -423,6 +444,10 @@
           "shensha": [
             "勾绞煞",
             "六厄"
+          ],
+          "weights": [
+            15,
+            7
           ]
         }
       ],
