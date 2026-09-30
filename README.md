@@ -26,7 +26,7 @@ npm start           # 默认端口 8080
 ### `GET /v1/health`
 
 ```json
-{ "ok": true, "engine": "mingyu-core@0.3.0", "config": "2026-09-30.v1.4" }
+{ "ok": true, "engine": "mingyu-core@0.3.0", "config": "2026-09-30.v1.5" }
 ```
 
 ### `POST /v1/bazi`
@@ -45,7 +45,7 @@ npm start           # 默认端口 8080
 
 ```jsonc
 {
-  "version": { "api": "v1", "engine": "mingyu-core@0.3.0", "config": "2026-09-30.v1.4" },
+  "version": { "api": "v1", "engine": "mingyu-core@0.3.0", "config": "2026-09-30.v1.5" },
   "input": { "date", "time", "city", "longitude", "gender", "timeKnown", "trueSolarTime" },
   "warnings": [],                      // 节气交界、时辰交界等提示（中文，可直接给用户看）
   "timeCheck": { "mode", "pillars", "other": { "mode", "pillars" }, "differs" },
@@ -64,7 +64,7 @@ npm start           # 默认端口 8080
     "dayMasterCard": { "dayGanZhi", "gan", "element", "yinYang" },
     "wuxingRing": { "type", "range", "dominant", "dayMasterElement", "rows": [{ "element", "percent", "exact", "tenGods" }] },
     "tenGodBar": { "total", "sum", "rows": [{ "tenGod", "count", "percent" }] },
-    "shenshaPanel": { "featured": [...], "dimensions": [{ "key", "name", "score", "tier", "shensha" }], "all": [...] }
+    "shenshaPanel": { "featured": [{ "name", "rarity", "stars", "pillars", "pillarCount" }], "dimensions": [{ "key", "name", "score", "tier", "shensha", "weights" }], "all": [...] }
   }
 }
 ```
@@ -83,11 +83,18 @@ npm start           # 默认端口 8080
 
 ## 算法口径
 
-所有权重和阈值在 `src/config.js`，改口径只改这一个文件，并升 `CONFIG_VERSION`（当前 `2026-09-30.v1.4`）。测试会检查本 README 写的版本号和五行权重跟代码一致。
+所有权重和阈值在 `src/config.js`，改口径只改这一个文件，并升 `CONFIG_VERSION`（当前 `2026-09-30.v1.5`）。测试会检查本 README 写的版本号和五行权重跟代码一致。
 
 - **五行能量环**：天干每字 1；三个藏干的地支按本气、中气、余气 0.5 / 0.25 / 0.05，两个藏干的地支 0.7 / 0.3，一个藏干的地支 1；日主计入；取整后残差归最大项。
 - **十神占比**：天干、藏干每个 1，日主不计；每项去尾取整，总和可以不足 100。
-- **神煞图谱**：七个维度，组内命中神煞的权重相加，封顶 99，没有命中的维度不返回。
+- **神煞图谱**：七个维度，组内命中神煞的权重相加，封顶 99，没有命中的维度不返回；`weights` 与 `shensha` 一一对应，给前端按权重分段画条。
+- **稀有前三**：从命中的吉神（外加华盖）里，按出现比例从小到大取前三。出现比例＝抽样排盘里有这颗星的盘占多少，表在 `src/rarity.js`，由 `scripts/rarity.mjs` 按日期枚举合成生辰统计：自 1950-01-01 起每 7 天取一天（全局网格，分段跑和整段跑抽到同一批日期）、每天 12 个时辰、北京、钟表时，统计 1950～2009 年。现行表：成功 37566 张，跳过 6 张（1986～1991 年夏令时拨钟那天凌晨 2 点多，钟表时间不存在），失败 0；比例以成功数为分母。重新生成：
+  ```
+  node scripts/rarity.mjs count 1950-01-01 1954-12-31 c1950.json   # 每 5 年一段，可并行；也可以一段跑完
+  …
+  node scripts/rarity.mjs build src/rarity.js c*.json
+  ```
+  `stars` 是 1～5 星：<15% 五星、15～30% 四星、30～45% 三星、45～60% 二星、≥60% 一星。改了神煞查法要重新生成比例表。
 - **类型标签**：强度分 = 月令（扶身 25／相持 20／制身 10）＋ 通根（强根 40／有根 10／无根 0）＋ 得势（扶身 20／相持 10／制身 0），三项取自引擎的身强弱判断；≥80 极强型、60～79 身强型、55～59 均衡型、<55 偏弱型。引擎没给身强弱（如时辰不详）时不给标签。
 - **神煞查法**：默认用引擎的问真口径；德秀贵人取引擎古法口径；天乙贵人用「庚辛逢马虎」版；学堂按年柱、日柱纳音各查一次。
 - **大运流年**：`70 + 8×(干喜忌 + 支喜忌)`，夹在 35～98，地支取本气，喜忌来自引擎的喜用神判断；档位 ≥90 / 75 / 60 / 45。每步大运的 `years` 正好是 `startYear`～`endYear` 这十年，跟下一步不重叠。
