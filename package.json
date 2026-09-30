@@ -1,0 +1,18 @@
+{
+  "name": "xuanji-paipan",
+  "version": "0.1.1",
+  "private": true,
+  "description": "玄玑排盘服务：八字排盘与图表数据（基于 mingyu-core）",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "mingyu-core": "0.3.0"
+  }
+}
